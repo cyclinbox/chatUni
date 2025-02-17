@@ -2,7 +2,7 @@
 
 ## introduction
 
-This is a small AI python tool. It utilizes APIs from [Baidu Qianfan platfrom](qianfan.baidubce.com/) and [Alibaba Bailian platform](https://bailian.console.aliyun.com/), and provide more than 10 models for using.
+This is a small AI python tool. It utilizes APIs from [Baidu Qianfan platfrom](qianfan.baidubce.com/) and [Alibaba Bailian platform](https://bailian.console.aliyun.com/), and provide more than 10 models for using, including DeepSeek-R1(full-scale, with reasoning steps) model. Users can access these models from commandline just by this AI python tool.
 
 > See more: 
 > + https://help.aliyun.com/zh/dashscope/developer-reference/api-details
