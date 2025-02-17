@@ -25,7 +25,7 @@ sys
 platform
 ```
 
-All libraries are python standard library except `requests`. Users can install `requests` by the following commands:
+All libraries are python standard libraries except `requests`. Users can install `requests` by the following commands:
 
 ```cmd
 python -m pip install requests
@@ -127,7 +127,7 @@ To show all available commands, you can input `/help`, and you will get some out
     Use """ to begin a multi-line message.
 ```
 
-To start a new chat session, you can input "/reset" or "/clear" command, and you will get a message "All reset! Start new topic now~"
+To clear chat history and start a new session, you can input `"/reset"`(clear history only) or `"/clear"`(clear history and clean screen) command, and you will get a message "All reset! Start new topic now~"
 
 ```
 [User]: /reset
@@ -206,7 +206,7 @@ By examining these characteristics, you can easily tell an apple from a pineappl
 
 Sometimes we need to input more than one line. However, in general, this program considers a line break as the end of a user input.
 
-To begin a multi-line message, you can start the sentence with three English double quotes before entering it, and use three English quotes and the last line to end this multi-line message.
+To begin a multi-line message, you can start the sentence with three English double quotes before entering it, and use three English quotes at the last line to end this multi-line message.
 
 ```
 [User]: """
