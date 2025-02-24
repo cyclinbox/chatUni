@@ -17,7 +17,7 @@
 # 2025-2-17 update: add `replay` function.
 
 import requests,json,datetime,os,sys,platform
-
+import readline
 
 proxies={
     'http' : 'http://127.0.0.1:7890',
@@ -76,6 +76,7 @@ def get_response_with_stream(messages):
 
     full_content = ""
     reasoning = False # a flag indicate if we are reasoning or not.
+    have_reasoned = False # a flag indicate if we have done reasoning or not.
     for line in response.iter_lines():
         txt = line.decode("UTF-8")
         txt = txt.strip()
@@ -95,17 +96,18 @@ def get_response_with_stream(messages):
             except:
                 response_msg_res = ""
             if(response_msg_con==None or len(response_msg_con)==0):
-                response_msg = response_msg_res
-                if(reasoning==False):
+                response_msg = response_msg_res if response_msg_res!=None else ""
+                if(reasoning==False and have_reasoned==False):
                     print("<think>")
                     full_content += "<reasoning>"
-                reasoning = True
+                    reasoning = True
                 full_content += response_msg
             else:
                 response_msg = response_msg_con
                 if(reasoning):
                     print("</think>")
                     full_content += "</reasoning>"
+                    have_reasoned = True
                 reasoning = False
                 full_content += response_msg
             print(response_msg,end="")
@@ -270,7 +272,6 @@ if(__name__=="__main__"):
             print(f"\n[{qwen_model_list[qwen_model_id]}]:\t",end="")
             resp = chat(text1)
             print(resp)
-
 
 
 
